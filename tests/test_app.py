@@ -9,6 +9,7 @@ def test_health():
     body = response.json()
     assert body["status"] == "healthy"
     assert body["application"] == "student-ml-api"
+    assert body["version"] == "1.0.0"
 
 def test_predict_success():
     response = client.post("/predict", json={"value": 10})
